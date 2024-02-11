@@ -11,25 +11,39 @@ Before you begin, ensure that you have the following prerequisites installed:
     ```
    If you encounter any issues, consider restarting MySQL (search how to restart in the terminal).
 
-## Installing and Configuring Sequelize
+## Project Setup
 1. Begin by creating a project folder. For example, you can use `hello-world`.
 2. Navigate to the folder using the terminal:
     ```
     mkdir hello-world
     cd hello-world
     ```
-3. Create a sample Node.js application using the following command:
+3. Clonet the repository following command in your terminal:
+    ```
+    git clone https://github.com/choiruzain-latrobe/sequelize-basic.git
+    ```
+
+4. Install Node.js dependencies by running the following command in the terminal:
+    ```
+    npm install
+      ```
+5. Initialize the npm
     ```
     npm init
     ```
-4. Answer the set-up questions. Press ENTER to use the displayed default values and set the main entry point as `server.js`. This creates a project structure that is easy to maintain.
+6. Install Sequelize and the MySQL driver:
+    ```
+    npm install --save sequelize mysql2
+    ```
+
+Now you have set up with JavaScript and Sequelize, and next set up the installed MySQL.
 
 ### Set MySQL Root Password
 1. Access MySQL using the root user:
     ```
     mysql -u root
     ```
-2. Set a password for the MySQL root user (note that this practice is insecure; we’ll address security later):
+2. Set a password for the MySQL root user (note that this practice is insecure; we’ll cover this part):
     ```
     mysqladmin -u root password your_password_here
     ```
@@ -51,26 +65,49 @@ Create a `server.js` file in the root folder and copy the following code:
 ```javascript
 const Sequelize = require("sequelize");
 const sequelize = new Sequelize(
-    'hello_world_db', // Database name
-    'root', // MySQL username
-    'your_password_here', // MySQL password
-    {
-        host: 'localhost',
-        dialect: 'mysql'
-    }
+        'hello_world_db',
+        'root',
+        'your_password_here',
+        {
+           host: 'localhost',
+           dialect: 'mysql'
+        }
 );
 
-// Define your models and perform database operations using Sequelize
 
-// Example: Create a User model
-const User = sequelize.define('User', {
-    username: Sequelize.STRING,
-    email: Sequelize.STRING
-});
-
-// Sync the models with the database
-sequelize.sync().then(() => {
-    console.log('Database and tables created!');
+sequelize.authenticate().then(() => {
+   console.log('Connection has been established successfully.');
 }).catch((error) => {
-    console.error('Error syncing database:', error);
+   console.error('Unable to connect to the database: ', error);
 });
+   ```
+
+Remember to replace `'your_password_here'` with your actual MySQL root password.
+
+# Running the Application
+1. Open the terminal and navigate to your project folder.
+2. Run the following command to start your Node.js application:
+    ```
+    node server.js
+    ```
+3. Verify Success.
+
+   Check the console output for the “Connection has been established successfully.” message.
+
+If everything is set up correctly, you should see the message "Connection to MySQL database successful!" in the terminal.
+
+# Running other Applications
+There are additional files in your project:
+1. add_students_records.js: Defines the students table and inserts student data. Execute with:
+
+    ```
+    node add_students_records.js
+    ```
+
+2. Other associated files (e.g., array_raw_query.js, book_controller_retrieve.js, etc.) can be executed similarly with:
+
+    ```
+    node book_controller_retrieve.js
+    ```
+
+You're now ready to work with Sequelize and MySQL in your Node.js project!
