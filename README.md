@@ -104,5 +104,5 @@ There are additional files in your project, for examples:
     ```
     node book_controller_retrieve.js
     ```
-Remember for all files, do not forget to replace `'**choiru**'` with your actual MySQL root password. 
+Remember for all files, do not forget to **replace `choiru` with your actual MySQL root password**. 
 You're now ready to work with Sequelize and MySQL in your Node.js project!
