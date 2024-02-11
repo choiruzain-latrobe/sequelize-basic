@@ -92,7 +92,7 @@ Remember to replace `'choiru'` with your actual MySQL root password.
 If everything is set up correctly, you should see the message "Connection to MySQL database successful!" in the terminal.
 
 # Running other Applications
-There are additional files in your project:
+There are additional files in your project, for examples:
 1. add_students_records.js: Defines the students table and inserts student data. Execute with:
 
     ```
@@ -104,5 +104,5 @@ There are additional files in your project:
     ```
     node book_controller_retrieve.js
     ```
-
+Remember for all files, do not forget to replace `'**choiru**'` with your actual MySQL root password. 
 You're now ready to work with Sequelize and MySQL in your Node.js project!
