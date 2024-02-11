@@ -5,7 +5,8 @@ This document serves as a supplementary resource for students studying CSE5006 a
 ## Prerequisites
 Before you begin, ensure that you have the following prerequisites installed:
 1. **Node.js**: Make sure Node.js is installed on your system. If not, you can download it from the official website.
-2. **MySQL**: Install MySQL using Homebrew (on macOS or Linux):
+   
+3. **MySQL**: Install MySQL using Homebrew (on macOS or Linux):
     ```
     brew install mysql
     ```
@@ -13,25 +14,18 @@ Before you begin, ensure that you have the following prerequisites installed:
 
 ## Project Setup
 1. Begin by creating a project folder. For example, you can use `hello-world`.
-2. Navigate to the folder using the terminal:
-    ```
-    mkdir hello-world
-    cd hello-world
-    ```
-3. Clonet the repository following command in your terminal:
+2. Clone the repository following command in your terminal:
     ```
     git clone https://github.com/choiruzain-latrobe/sequelize-basic.git
     ```
+    It will download all the necessary files to do sequelize operations later. Note that our working directory will be **sequelize-basic** directory. Thus, we should go to that folder.
 
-4. Install Node.js dependencies by running the following command in the terminal:
+3. Install Node.js dependencies by running the following command in the terminal:
     ```
     npm install
-      ```
-5. Initialize the npm
     ```
-    npm init
-    ```
-6. Install Sequelize and the MySQL driver:
+
+4. Install Sequelize and the MySQL driver:
     ```
     npm install --save sequelize mysql2
     ```
@@ -60,14 +54,15 @@ Now you have set up with JavaScript and Sequelize, and next set up the installed
     exit
     ```
 
-### Connecting to MySQL Database
-Create a `server.js` file in the root folder and copy the following code:
+### Connecting to MySQL Database using js files
+Please be aware that after pulling the code from Git in the previous step, you’ll encounter several existing JavaScript files. One of these files is **server.js**, do not forget to edit the script with your actual MySQL password. Within this file, you’ll find the following script:
+
 ```javascript
 const Sequelize = require("sequelize");
 const sequelize = new Sequelize(
         'hello_world_db',
         'root',
-        'your_password_here',
+        'choiru', // Replace 'choiru' with your actual MySQL password
         {
            host: 'localhost',
            dialect: 'mysql'
