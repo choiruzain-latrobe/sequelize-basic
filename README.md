@@ -55,7 +55,7 @@ Now you have set up with JavaScript and Sequelize, and next set up the installed
     ```
 
 ### Connecting to MySQL Database using js files
-Please be aware that after pulling the code from Git in the previous step, you’ll encounter several existing JavaScript files. One of these files is **server.js**, do not forget to edit the script with your actual MySQL password. Within this file, you’ll find the following script:
+Please be aware that after pulling the code from Git in the previous step, you’ll encounter several existing JavaScript files. One of these files is **server.js**. Within this file, you’ll find the following script:
 
 ```javascript
 const Sequelize = require("sequelize");
@@ -77,7 +77,7 @@ sequelize.authenticate().then(() => {
 });
    ```
 
-Remember to replace `'your_password_here'` with your actual MySQL root password.
+Remember to replace `'choiru'` with your actual MySQL root password.
 
 # Running the Application
 1. Open the terminal and navigate to your project folder.
