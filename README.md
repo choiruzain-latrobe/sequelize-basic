@@ -18,6 +18,10 @@ Before you begin, ensure that you have the following prerequisites installed:
     ```
     git clone https://github.com/choiruzain-latrobe/sequelize-basic.git
     ```
+   Make sure you are working inside the folder **hello-world**. If not, go inside the folder
+     ```
+    cd hello-world
+    ```
     It will download all the necessary files to do sequelize operations later. Note that our working directory will be **sequelize-basic** directory. Thus, we should go to that folder.
 
 3. Install Node.js dependencies by running the following command in the terminal:
